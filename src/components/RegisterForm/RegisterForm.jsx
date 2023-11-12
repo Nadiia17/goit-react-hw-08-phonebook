@@ -1,6 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import toast from 'react-hot-toast';
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  VStack,
+} from '@chakra-ui/react';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -24,20 +31,22 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Username
-        <input type="text" name="name" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+    <VStack as="form" onSubmit={handleSubmit} autoComplete="off" spacing={4}>
+      <FormControl id="name" isRequired>
+        <FormLabel>Username</FormLabel>
+        <Input type="text" name="name" />
+      </FormControl>
+      <FormControl id="email" isRequired>
+        <FormLabel>Email</FormLabel>
+        <Input type="email" name="email" />
+      </FormControl>
+      <FormControl id="password" isRequired>
+        <FormLabel>Password</FormLabel>
+        <Input type="password" name="password" />
+      </FormControl>
+      <Button type="submit" colorScheme="brand" size="md" fontSize="md">
+        Register
+      </Button>
+    </VStack>
   );
 };

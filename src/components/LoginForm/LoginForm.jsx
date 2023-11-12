@@ -1,3 +1,11 @@
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Button,
+  VStack,
+} from '@chakra-ui/react';
+
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 
@@ -17,16 +25,18 @@ export const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <VStack as="form" onSubmit={handleSubmit} autoComplete="off" spacing={4}>
+      <FormControl id="email" isRequired>
+        <FormLabel>Email</FormLabel>
+        <Input type="email" name="email" />
+      </FormControl>
+      <FormControl id="password" isRequired>
+        <FormLabel>Password</FormLabel>
+        <Input type="password" name="password" />
+      </FormControl>
+      <Button type="submit" colorScheme="brand" size="md" fontSize="md">
+        Log In
+      </Button>
+    </VStack>
   );
 };

@@ -7,9 +7,9 @@ import { store, persistor } from 'redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
-const theme = {
+const theme = extendTheme({
   colors: {
     brand: {
       50: '#f7fafc', // Світлий відтінок для фону
@@ -32,7 +32,27 @@ const theme = {
     buttonHoverBg: '#9a8c98', // Фон кнопок при наведенні
     background: '#f2e9e4', // Основний фон
   },
-};
+  space: {
+    // Обмежений набір значень для відступів
+    1: '4px',
+    2: '8px',
+    4: '16px',
+    6: '24px',
+    8: '32px',
+  },
+  sizes: {
+    // Обмежений набір розмірів
+    full: '100%',
+    xs: '20rem',
+    md: '28rem',
+    xl: '36rem',
+  },
+  shadows: {
+    // Обмежений набір тіней
+    sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+    md: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+  },
+});
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>

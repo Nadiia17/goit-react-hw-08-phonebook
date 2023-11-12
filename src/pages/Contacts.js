@@ -4,6 +4,7 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { fetchContacts } from 'redux/operations';
+import { Box } from '@chakra-ui/react';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -13,11 +14,16 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <Filter />
-      <ContactList />
-    </div>
+    <Box maxW="1200px" mx="auto" mt={8}>
+      <Box mb={4}>
+        <ContactForm />
+      </Box>
+      <Box mb={4}>
+        <Filter />
+      </Box>
+      <Box>
+        <ContactList />
+      </Box>
+    </Box>
   );
 }

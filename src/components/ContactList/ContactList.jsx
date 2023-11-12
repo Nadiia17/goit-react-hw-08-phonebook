@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { ContactItem } from 'components/ContactItem/ContactItem';
-import { Contact, List } from './ContactList.styled';
+// import { Contact, List } from './ContactList.styled';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
@@ -11,6 +11,7 @@ import {
   selectIsLoading,
   selectVisibleContacts,
 } from 'redux/selectors';
+import { Box, VStack } from '@chakra-ui/react';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -30,20 +31,46 @@ export const ContactList = () => {
 
   const filteredContacts = useSelector(selectVisibleContacts);
   return (
-    <>
+    <Box>
       {isLoading && <Loader />}
 
-      <List>
+      <VStack spacing={4} align="stretch">
         {filteredContacts.map(contact => (
-          <Contact key={contact.id}>
+          <Box
+            key={contact.id}
+            p={4}
+            borderWidth="1px"
+            borderRadius="md"
+            boxShadow="base"
+            bg="brand.200"
+          >
             <ContactItem
               name={contact.name}
               number={contact.number}
               id={contact.id}
             />
-          </Contact>
+          </Box>
         ))}
-      </List>
-    </>
+      </VStack>
+    </Box>
   );
 };
+
+//   return (
+//     <>
+//       {isLoading && <Loader />}
+
+//       <List>
+//         {filteredContacts.map(contact => (
+//           <Contact key={contact.id}>
+//             <ContactItem
+//               name={contact.name}
+//               number={contact.number}
+//               id={contact.id}
+//             />
+//           </Contact>
+//         ))}
+//       </List>
+//     </>
+//   );
+// };
