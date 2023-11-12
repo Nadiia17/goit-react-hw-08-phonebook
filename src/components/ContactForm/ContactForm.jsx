@@ -40,7 +40,7 @@ export const ContactForm = () => {
         if (isContactExists) {
           toast.error(`${values.name} is already in the phonebook`);
         } else {
-          dispatch(addContact({ name: values.name, phone: values.number }));
+          dispatch(addContact({ name: values.name, number: values.number }));
           actions.resetForm();
           toast.success(`${values.name} added to the phonebook`);
         }
