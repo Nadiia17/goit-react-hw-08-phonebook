@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text, useTheme } from '@chakra-ui/react';
+import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { FiUser, FiUserX } from 'react-icons/fi';
 import { AiOutlinePhone } from 'react-icons/ai';
 
