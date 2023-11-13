@@ -5,13 +5,23 @@ import { useAuth } from 'hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 import { ColorModeSwitcher } from 'components/ColorModeSwitcher/ColorModeSwitcher';
 
-import { Flex, Box, Heading, useColorModeValue } from '@chakra-ui/react';
+import {
+  Flex,
+  Box,
+  Heading,
+  useColorModeValue,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
 
   const bgColor = useColorModeValue('teal.100', 'teal.900');
   const textColor = useColorModeValue('teal.600', 'white');
+
+  const logoSize = useBreakpointValue({ base: 'md', md: 'lg' });
+  const paddingX = useBreakpointValue({ base: 2, md: 6 });
+  const buttonSize = useBreakpointValue({ base: 'sm', md: 'md' });
 
   const hoverColorLight = useColorModeValue('teal.600', 'teal.400');
   const hoverTransform = 'scale(1.05)';
@@ -20,8 +30,8 @@ export const AppBar = () => {
   return (
     <Flex
       as="header"
-      px="6"
-      py="4"
+      px={paddingX}
+      py="2"
       align="center"
       justify="space-between"
       bg={bgColor}
@@ -29,7 +39,7 @@ export const AppBar = () => {
       w="full"
     >
       <Heading
-        size="lg"
+        size={logoSize}
         as={NavLink}
         to="/"
         _hover={{
@@ -41,11 +51,14 @@ export const AppBar = () => {
       >
         PhoneBook
       </Heading>
-      <Box>
-        {/* <Navigation /> */}
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </Box>
-      <ColorModeSwitcher />
+      <Flex align="center">
+        {isLoggedIn ? (
+          <UserMenu buttonSize={buttonSize} />
+        ) : (
+          <AuthNav buttonSize={buttonSize} />
+        )}
+        <ColorModeSwitcher ml={2} size={buttonSize} />
+      </Flex>
     </Flex>
   );
 };

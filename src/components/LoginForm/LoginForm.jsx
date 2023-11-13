@@ -34,6 +34,7 @@ export const LoginForm = () => {
     <Box
       bg={formBackgroundColor}
       p={8}
+      w="90%"
       boxShadow="base"
       borderRadius="md"
       mx="auto"

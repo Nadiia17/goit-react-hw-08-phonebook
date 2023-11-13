@@ -1,14 +1,22 @@
-import { Box, Button, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  VStack,
+  useBreakpointValue,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 
 export const AuthNav = () => {
   const activeBgColor = useColorModeValue('teal.400', 'teal.800');
+  const buttonSize = useBreakpointValue({ base: 'sm', md: 'md' });
+
   return (
     <Box>
       <Button
         as={NavLink}
         to="/register"
-        size="md"
+        size={buttonSize}
         mx="2"
         _active={{
           bg: activeBgColor,
@@ -19,7 +27,7 @@ export const AuthNav = () => {
       <Button
         as={NavLink}
         to="/login"
-        size="md"
+        size={buttonSize}
         mx="2"
         _active={{
           bg: activeBgColor,

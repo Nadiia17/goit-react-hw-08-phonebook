@@ -49,7 +49,7 @@ export const ContactForm = () => {
     >
       {props => (
         <Form>
-          <VStack spacing={4} align="start" maxW="400px" mx="auto">
+          <VStack spacing={4} align="start" maxW="100%" mx="auto">
             <Field name="name">
               {({ field, form }) => (
                 <FormControl isInvalid={form.errors.name && form.touched.name}>

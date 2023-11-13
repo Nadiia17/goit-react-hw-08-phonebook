@@ -1,7 +1,14 @@
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
-import { Text, Button, Flex, useColorModeValue } from '@chakra-ui/react';
+import {
+  Text,
+  Button,
+  Flex,
+  useColorModeValue,
+  HStack,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -12,26 +19,25 @@ export const UserMenu = () => {
   // const hoverBgColor = useColorModeValue('teal.100', 'teal.700');
   const boxShadowColor = useColorModeValue(
     'rgba(0, 0, 0, 0.1)',
-    'rgba(0, 0, 0, 0.9)'
+    'rgba(0, 0, 0, 0.4)'
   );
-
+  const buttonSize = useBreakpointValue({ base: 'xs', sm: 'sm' });
   return (
-    <Flex
-      align="center"
-      justify="space-between"
-      p={4}
+    <HStack
+      spacing={0}
+      p={2}
       borderRadius="md"
       boxShadow={`0 0 8px 2px ${boxShadowColor}`}
       bg={backgroundColor}
       color={color}
-      spacing={4}
+      ml={2}
     >
-      <Text fontSize="md" mr={4}>
+      <Text fontSize="md" mr={2}>
         Welcome, {user.name}
       </Text>
       <Button size="sm" onClick={() => dispatch(logOut())}>
         Logout
       </Button>
-    </Flex>
+    </HStack>
   );
 };

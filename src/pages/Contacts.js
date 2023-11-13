@@ -14,7 +14,7 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <Box maxW="1200px" mx="auto" mt={8}>
+    <Box maxW="xl" mx="auto" mt={8} w="90%">
       <Box mb={4}>
         <ContactForm />
       </Box>
