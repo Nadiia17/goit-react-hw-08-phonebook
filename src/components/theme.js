@@ -69,7 +69,7 @@ export const theme = extendTheme({
     global: props => ({
       body: {
         bg: props.colorMode === 'dark' ? 'teal.800' : 'teal.50',
-        color: props.colorMode === 'dark' ? 'white' : 'gray.800',
+        color: props.colorMode === 'dark' ? 'teal.50' : 'teal.900',
       },
       // ... тут можна додати глобальні стилі для інших елементів
     }),
