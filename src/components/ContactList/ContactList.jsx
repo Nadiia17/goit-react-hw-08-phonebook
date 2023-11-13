@@ -42,7 +42,6 @@ export const ContactList = () => {
             borderWidth="1px"
             borderRadius="md"
             boxShadow="base"
-            bg="brand.200"
           >
             <ContactItem
               name={contact.name}

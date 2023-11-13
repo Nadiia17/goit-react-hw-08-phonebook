@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { selectContacts } from 'redux/selectors';
 import toast from 'react-hot-toast';
@@ -77,7 +77,7 @@ export const ContactForm = () => {
               )}
             </Field>
 
-            <Button mt={4} mx="auto" colorScheme="brand" type="submit">
+            <Button mt={4} mx="auto" type="submit">
               Add contact
             </Button>
           </VStack>

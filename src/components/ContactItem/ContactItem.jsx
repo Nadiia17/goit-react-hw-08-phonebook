@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Text,
-  useColorModeValue,
-  useTheme,
-} from '@chakra-ui/react';
+import { Box, Button, Flex, Text, useTheme } from '@chakra-ui/react';
 import { FiUser, FiUserX } from 'react-icons/fi';
 import { AiOutlinePhone } from 'react-icons/ai';
 
@@ -32,27 +25,17 @@ export const ContactItem = ({ name, number, id }) => {
     <Flex justifyContent="space-between" alignItems="center">
       <Box>
         <Flex alignItems="center">
-          <FiUser size="1.2em" color={theme.colors.brand[800]} />
+          <FiUser size="1.2em" />
           <Text ml="2">{name}</Text>
         </Flex>
         <Flex alignItems="center">
-          <AiOutlinePhone size="1.2em" color={theme.colors.brand[800]} />
+          <AiOutlinePhone size="1.2em" />
           <Text ml="2">{number}</Text>
         </Flex>
       </Box>
 
-      <Button
-        bgColor={theme.colors.brand[300]}
-        color={theme.colors.brand[800]}
-        borderRadius="5px"
-        px="3"
-        py="2"
-        onClick={handleDelete}
-        _hover={{
-          bgColor: theme.colors.brand[600],
-        }}
-      >
-        <FiUserX size="1.2em" color={theme.colors.brand[800]} />
+      <Button borderRadius="5px" px="3" py="2" onClick={handleDelete}>
+        <FiUserX size="1.2em" />
         <Text ml="2">Delete</Text>
       </Button>
     </Flex>

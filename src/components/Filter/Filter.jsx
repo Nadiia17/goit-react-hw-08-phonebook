@@ -2,7 +2,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
 
-import { Box, FormControl, Input, Text } from '@chakra-ui/react';
+import {
+  Box,
+  FormControl,
+  Input,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { selectFilter } from 'redux/selectors';
 
 export const Filter = () => {
@@ -13,15 +19,17 @@ export const Filter = () => {
     dispatch(setFilter(event.target.value));
   };
 
+  const filterBgColor = useColorModeValue('teal.200', 'teal.600');
+
   return (
     <Box
       p={4}
       borderWidth="1px"
       borderRadius="md"
       boxShadow="base"
-      bg="brand.100"
+      bg={filterBgColor}
     >
-      <Text mb={2} fontSize="md" fontWeight="bold" color="brand.700">
+      <Text mb={2} fontSize="md" fontWeight="bold">
         Find contacts by name
       </Text>
       <FormControl>
@@ -31,7 +39,6 @@ export const Filter = () => {
           placeholder="Enter name to find"
           value={filter}
           onChange={handleChange}
-          bg="white"
         />
       </FormControl>
     </Box>
