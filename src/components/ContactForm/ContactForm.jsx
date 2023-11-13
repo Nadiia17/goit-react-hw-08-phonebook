@@ -11,7 +11,6 @@ import {
   Button,
   FormErrorMessage,
   VStack,
-  Center,
 } from '@chakra-ui/react';
 
 const PhonebookSchema = Yup.object().shape({

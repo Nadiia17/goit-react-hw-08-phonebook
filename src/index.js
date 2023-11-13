@@ -7,7 +7,7 @@ import { store, persistor } from 'redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from 'components/theme';
 
 // const theme = extendTheme({

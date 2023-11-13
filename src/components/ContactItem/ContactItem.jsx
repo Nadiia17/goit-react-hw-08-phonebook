@@ -8,7 +8,6 @@ import toast from 'react-hot-toast';
 
 export const ContactItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
-  const theme = useTheme();
 
   const handleDelete = () => {
     dispatch(deleteContact(id))

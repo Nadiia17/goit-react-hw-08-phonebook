@@ -9,7 +9,7 @@ export const UserMenu = () => {
 
   const backgroundColor = useColorModeValue('teal.50', 'teal.800');
   const color = useColorModeValue('gray.800', 'white');
-  const hoverBgColor = useColorModeValue('teal.100', 'teal.700');
+  // const hoverBgColor = useColorModeValue('teal.100', 'teal.700');
   const boxShadowColor = useColorModeValue(
     'rgba(0, 0, 0, 0.1)',
     'rgba(0, 0, 0, 0.9)'
