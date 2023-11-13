@@ -1,14 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
-import {
-  Text,
-  Button,
-  Flex,
-  useColorModeValue,
-  HStack,
-  useBreakpointValue,
-} from '@chakra-ui/react';
+import { Text, Button, useColorModeValue, HStack } from '@chakra-ui/react';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -21,7 +14,7 @@ export const UserMenu = () => {
     'rgba(0, 0, 0, 0.1)',
     'rgba(0, 0, 0, 0.4)'
   );
-  const buttonSize = useBreakpointValue({ base: 'xs', sm: 'sm' });
+
   return (
     <HStack
       spacing={0}

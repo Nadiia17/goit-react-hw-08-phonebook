@@ -7,7 +7,6 @@ import { ColorModeSwitcher } from 'components/ColorModeSwitcher/ColorModeSwitche
 
 import {
   Flex,
-  Box,
   Heading,
   useColorModeValue,
   useBreakpointValue,

@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  VStack,
   useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react';
