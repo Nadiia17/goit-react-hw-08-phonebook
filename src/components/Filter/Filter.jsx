@@ -19,11 +19,11 @@ export const Filter = () => {
     dispatch(setFilter(event.target.value));
   };
 
-  const filterBgColor = useColorModeValue('teal.200', 'teal.600');
+  const filterBgColor = useColorModeValue('teal.200', 'teal.700');
 
   return (
     <Box
-      p={4}
+      p={6}
       borderWidth="1px"
       borderRadius="md"
       boxShadow="base"

@@ -11,6 +11,8 @@ import {
   Button,
   FormErrorMessage,
   VStack,
+  useColorModeValue,
+  Box,
 } from '@chakra-ui/react';
 
 const PhonebookSchema = Yup.object().shape({
@@ -27,62 +29,85 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
   const currentContacts = useSelector(selectContacts);
 
+  const formBackgroundColor = useColorModeValue('teal.200', 'teal.700');
+  const buttonBackgroundColor = useColorModeValue('teal.100', 'teal.600');
+  const buttonHoverColor = useColorModeValue('teal.300', 'teal.500');
+
   return (
-    <Formik
-      initialValues={{
-        name: '',
-        number: '',
-      }}
-      validationSchema={PhonebookSchema}
-      onSubmit={(values, actions) => {
-        const isContactExists = currentContacts.some(
-          contact => contact.name.toLowerCase() === values.name.toLowerCase()
-        );
-        if (isContactExists) {
-          toast.error(`${values.name} is already in the phonebook`);
-        } else {
-          dispatch(addContact({ name: values.name, number: values.number }));
-          actions.resetForm();
-          toast.success(`${values.name} added to the phonebook`);
-        }
-      }}
+    <Box
+      bg={formBackgroundColor}
+      p={6}
+      boxShadow="base"
+      borderRadius="md"
+      mx="auto"
+      my={8}
     >
-      {props => (
-        <Form>
-          <VStack spacing={4} align="start" maxW="100%" mx="auto">
-            <Field name="name">
-              {({ field, form }) => (
-                <FormControl isInvalid={form.errors.name && form.touched.name}>
-                  <FormLabel htmlFor="name">Name</FormLabel>
-                  <Input {...field} id="name" placeholder="Enter name" />
-                  <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
+      <Formik
+        initialValues={{
+          name: '',
+          number: '',
+        }}
+        validationSchema={PhonebookSchema}
+        onSubmit={(values, actions) => {
+          const isContactExists = currentContacts.some(
+            contact => contact.name.toLowerCase() === values.name.toLowerCase()
+          );
+          if (isContactExists) {
+            toast.error(`${values.name} is already in the phonebook`);
+          } else {
+            dispatch(addContact({ name: values.name, number: values.number }));
+            actions.resetForm();
+            toast.success(`${values.name} added to the phonebook`);
+          }
+        }}
+      >
+        {props => (
+          <Form>
+            <VStack spacing={4} align="start" maxW="100%" mx="auto">
+              <Field name="name">
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.name && form.touched.name}
+                  >
+                    <FormLabel htmlFor="name">Name</FormLabel>
+                    <Input {...field} id="name" placeholder="Enter name" />
+                    <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
 
-            <Field name="number">
-              {({ field, form }) => (
-                <FormControl
-                  isInvalid={form.errors.number && form.touched.number}
-                >
-                  <FormLabel htmlFor="number">Number</FormLabel>
-                  <Input
-                    {...field}
-                    id="number"
-                    placeholder="Enter number XXX-XXX-XXXX"
-                  />
-                  <FormErrorMessage>{form.errors.number}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
+              <Field name="number">
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.number && form.touched.number}
+                  >
+                    <FormLabel htmlFor="number">Number</FormLabel>
+                    <Input
+                      {...field}
+                      id="number"
+                      placeholder="Enter number XXX-XXX-XXXX"
+                    />
+                    <FormErrorMessage>{form.errors.number}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
 
-            <Button mt={4} mx="auto" type="submit">
-              Add contact
-            </Button>
-          </VStack>
-        </Form>
-      )}
-    </Formik>
+              <Button
+                mt={4}
+                mx="auto"
+                type="submit"
+                bg={buttonBackgroundColor}
+                _hover={{
+                  bg: buttonHoverColor,
+                }}
+              >
+                Add contact
+              </Button>
+            </VStack>
+          </Form>
+        )}
+      </Formik>
+    </Box>
   );
 };
 

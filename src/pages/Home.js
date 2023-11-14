@@ -15,7 +15,7 @@ import { Helmet } from 'react-helmet';
 export default function Home() {
   const { isLoggedIn } = useAuth();
 
-  const iconColor = useColorModeValue('teal.800', 'teal.50');
+  const iconColor = useColorModeValue('teal.800', 'teal.100');
   const iconSize = useBreakpointValue({ base: '4em', md: '6em' }); // Менша іконка на мобільних
   const headingSize = useBreakpointValue({ base: 'lg', md: 'xl' }); // Менший розмір заголовку на мобільних
   const textSize = useBreakpointValue({ base: 'md', md: 'lg' }); // Менший розмір тексту на мобільних
