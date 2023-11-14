@@ -11,7 +11,7 @@ export const ColorModeSwitcher = () => {
   const SwitchIcon = useColorModeValue(FaSun, FaMoon);
   const hoverBg = useColorModeValue('teal.300', 'teal.700');
 
-  const buttonSize = useBreakpointValue({ base: 'sm', md: 'md', lg: 'lg' });
+  const buttonSize = useBreakpointValue({ base: 'sm', md: 'md' });
 
   return (
     <IconButton
