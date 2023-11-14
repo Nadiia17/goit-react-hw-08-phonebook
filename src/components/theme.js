@@ -17,18 +17,18 @@ export const theme = extendTheme({
     Button: {
       // Базові стилі для всіх кнопок
       baseStyle: ({ colorMode }) => ({
-        bg: colorMode === 'dark' ? 'teal.600' : 'teal.200', // Початковий фон
-        color: colorMode === 'dark' ? 'white' : 'teal.800', // Колір тексту
+        bg: colorMode === 'dark' ? 'teal.600' : 'teal.200',
+        color: colorMode === 'dark' ? 'white' : 'teal.800',
         _hover: {
-          bg: colorMode === 'dark' ? 'teal.700' : 'teal.300', // Фон при наведенні
+          bg: colorMode === 'dark' ? 'teal.700' : 'teal.300',
         },
       }),
       variants: {
         solid: ({ colorMode }) => ({
-          bg: colorMode === 'dark' ? 'teal.600' : 'teal.200', // Початковий фон для варіанту 'solid'
-          color: colorMode === 'dark' ? 'white' : 'teal.800', // Колір тексту для варіанту 'solid'
+          bg: colorMode === 'dark' ? 'teal.600' : 'teal.200',
+          color: colorMode === 'dark' ? 'white' : 'teal.800',
           _hover: {
-            bg: colorMode === 'dark' ? 'teal.700' : 'teal.300', // Фон при наведенні для варіанту 'solid'
+            bg: colorMode === 'dark' ? 'teal.700' : 'teal.300',
           },
         }),
       },
@@ -37,8 +37,8 @@ export const theme = extendTheme({
       // Стилі для інпутів
       baseStyle: ({ colorMode }) => ({
         field: {
-          bg: colorMode === 'dark' ? 'gray.700' : 'white',
-          color: colorMode === 'dark' ? 'white' : 'gray.800',
+          bg: colorMode === 'dark' ? 'teal.700' : 'white',
+          color: colorMode === 'dark' ? 'white' : 'teal.800',
         },
       }),
     },
@@ -51,7 +51,7 @@ export const theme = extendTheme({
     Flex: {
       // Стилі для Flex контейнерів
       baseStyle: ({ colorMode }) => ({
-        bg: colorMode === 'dark' ? 'gray.700' : 'teal.50',
+        bg: colorMode === 'dark' ? 'teal.700' : 'teal.50',
       }),
     },
     FormControl: {
@@ -62,8 +62,6 @@ export const theme = extendTheme({
         },
       }),
     },
-
-    // Інші компоненти...
   },
   styles: {
     global: props => ({
@@ -71,7 +69,6 @@ export const theme = extendTheme({
         bg: props.colorMode === 'dark' ? 'teal.800' : 'teal.50',
         color: props.colorMode === 'dark' ? 'teal.50' : 'teal.900',
       },
-      // ... тут можна додати глобальні стилі для інших елементів
     }),
   },
 });

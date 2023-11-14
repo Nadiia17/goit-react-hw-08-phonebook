@@ -1,4 +1,3 @@
-// import { Navigation } from '../Navigation/Navigation';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { AuthNav } from '../AuthNav/AuthNav';
 import { useAuth } from 'hooks/useAuth';
@@ -43,9 +42,9 @@ export const AppBar = () => {
         to="/"
         _hover={{
           textDecoration: 'none',
-          color: hoverColorLight, // Колір при наведенні для світлої/темної теми
-          transform: hoverTransform, // Ефект масштабування при наведенні
-          transition: transition, // Плавна анімація для ефектів
+          color: hoverColorLight,
+          transform: hoverTransform,
+          transition: transition,
         }}
       >
         PhoneBook

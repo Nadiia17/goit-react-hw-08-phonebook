@@ -8,7 +8,7 @@ export const UserMenu = () => {
   const { user } = useAuth();
 
   const backgroundColor = useColorModeValue('teal.50', 'teal.800');
-  const color = useColorModeValue('gray.800', 'white');
+  const color = useColorModeValue('teal.800', 'teal.50');
   // const hoverBgColor = useColorModeValue('teal.100', 'teal.700');
   const boxShadowColor = useColorModeValue(
     'rgba(0, 0, 0, 0.1)',

@@ -19,7 +19,6 @@ export const ColorModeSwitcher = () => {
       fontSize="lg"
       aria-label={`Switch on ${useColorModeValue('dark', 'light')} theme`}
       variant="ghost"
-      // color="current"
       marginLeft="2"
       onClick={toggleColorMode}
       icon={<SwitchIcon />}

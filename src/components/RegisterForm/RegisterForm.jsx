@@ -39,9 +39,9 @@ export const RegisterForm = () => {
   return (
     <Box
       bg={formBackgroundColor}
-      w="90%" // Форма тепер буде використовувати всю ширину контейнера
-      maxW="md" // Максимальна ширина форми
-      p={8} // Внутрішні відступи
+      w="90%"
+      maxW="md"
+      p={8}
       boxShadow="base"
       borderRadius="md"
       mx="auto"
